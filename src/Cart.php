@@ -269,6 +269,10 @@ class Cart implements Arrayable
             return;
         }
 
+        $sstate = @unserialize($state);
+        if(empty($sstate)){
+            return;
+        }
         $data = @unserialize($state); // suppress unserializable error
 
         $this->restoreCheckType($data);
